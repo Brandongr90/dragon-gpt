@@ -1,0 +1,7 @@
+{
+  "name": "ChatGPT",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

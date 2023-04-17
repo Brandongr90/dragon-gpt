@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ChatGPT",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
