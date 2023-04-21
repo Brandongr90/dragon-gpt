@@ -1,5 +1,8 @@
+ion-content {
+  height: 76%;
+}
+
 .chat-item {
-  --padding-top: 10px;
   --padding-bottom: 10px;
 
   &.bot{
@@ -30,7 +33,7 @@ ion-badge {
 
 .empty {
   text-align: center;
-  padding-top: 30vh;
+  padding-top: 10vh;
   opacity: 30%;
 
   ion-icon {
@@ -62,6 +65,7 @@ ion-badge {
   width: 100%;
   border: 1px solid gray;
   border-radius: 20px;
+  overflow: scroll;
 }
 @media (min-width: 600px) {
   .container {
