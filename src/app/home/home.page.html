@@ -1,45 +1,49 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Chat Dragon
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [scrollEvents]="true">
-
-  <div *ngIf="!messages.length" class="empty">
-    <ion-icon src="assets/Dragon.svg"></ion-icon>
-    <h4>Tu chat esta vacío...</h4>
-  </div>
-
-  <ion-item lines="none" [ngClass]="{'bot': m.sender !== 'me'}" class="chat-item"
-    *ngFor="let m of messages; index as i">
-    <ion-badge slot="start" [color]="m.sender === 'me' ? 'warning' : 'danger'">
-      <ion-icon class="chat-icon" [src]="m.sender === 'me' ? 'assets/user.svg' : 'assets/Dragonblanco.svg'"></ion-icon>
-    </ion-badge>
-    <ion-label class="ion-text-wrap">
-      <p class="w-space">{{m.content}}</p>
-      <ion-spinner *ngIf="loading && (i+1 === messages.length)" color="danger" name="dots"></ion-spinner>
-    </ion-label>
-  </ion-item>
-
-</ion-content>
-
-<ion-footer class="ion-padding">
-
-  <form [formGroup]="form" (ngSubmit)="submit()" (keyup.enter)="submit()">
-
-    <ion-item class="text-box-item">
-      <ion-textarea formControlName="promt" auto-grow="true" placeholder="Escribe algo..."></ion-textarea>
-
-      <ion-buttons slot="end">
-        <ion-button>
-          <ion-icon class="submit-icon" color="danger" name="send"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-item>
-
-  </form>
-
-</ion-footer>
+<div class="container">
+  <div class="chatWindow">
+    
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <ion-title>
+          Chat Dragon
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content [scrollEvents]="true">
+    
+    
+      <div *ngIf="!messages.length" class="empty">
+        <ion-icon src="assets/Dragon.svg"></ion-icon>
+        <h4>Tu chat esta vacío...</h4>
+      </div>
+    
+      <ion-item lines="none" [ngClass]="{'bot': m.sender !== 'me'}" class="chat-item"
+        *ngFor="let m of messages; index as i">
+        <ion-badge slot="start" [color]="m.sender === 'me' ? 'warning' : 'danger'">
+          <ion-icon class="chat-icon" [src]="m.sender === 'me' ? 'assets/user.svg' : 'assets/Dragonblanco.svg'"></ion-icon>
+        </ion-badge>
+        <ion-label class="ion-text-wrap">
+          <p class="w-space">{{m.content}}</p>
+          <ion-spinner *ngIf="loading && (i+1 === messages.length)" color="danger" name="dots"></ion-spinner>
+        </ion-label>
+      </ion-item>
+    
+    </ion-content>
+    
+    <ion-footer class="ion-padding">
+    
+      <form [formGroup]="form" (ngSubmit)="submit()" (keyup.enter)="submit()">
+    
+        <ion-item class="text-box-item">
+          <ion-textarea formControlName="promt" auto-grow="true" placeholder="Escribe algo..."></ion-textarea>
+    
+          <ion-buttons slot="end">
+            <ion-button>
+              <ion-icon class="submit-icon" color="danger" name="send"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </form>
+    </ion-footer>
+    </div>
+    <div class="chatToggle" (click)="toggleChat()"></div>
+</div>

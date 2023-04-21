@@ -25,10 +25,22 @@ export class HomePage {
     private openAi: OpenaiService
   ) {}
 
+  toggleChat() {
+    let chatWindow = document.getElementsByClassName("chatWindow")  as HTMLCollectionOf<HTMLElement>;
+
+    if (chatWindow[0].style.height == "450px") {
+        chatWindow[0].style.height = ""; 
+        chatWindow[0].style.display = "none"; 
+    }
+    else {
+        chatWindow[0].style.height = "450px";
+        chatWindow[0].style.display = "revert";
+    }
+        
+}
+
   submit() {
     if(this.form.valid) {
-
-
 
     let promt = this.form.value.promt as string;
 

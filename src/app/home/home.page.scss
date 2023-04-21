@@ -37,3 +37,35 @@ ion-badge {
     font-size: 120px;
   }
 }
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: end;
+  gap: 20px;
+  width: 100vw;
+  bottom: 40px;
+  position: fixed;
+  z-index: 1;
+  padding: 20px;
+}
+.chatToggle {
+  width: 70px;
+  height: 70px;
+  background: blueviolet;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.chatWindow {
+  display: none;
+  z-index: 1;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+@media (min-width: 600px) {
+  .container {
+      width: 400px;
+      right: 70px;
+  }
+}
