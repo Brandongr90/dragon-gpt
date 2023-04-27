@@ -5,7 +5,7 @@
     <ion-header [translucent]="true" style="border-radius: 30px">
       <ion-toolbar style="border-radius: 30px">
         <ion-title>
-          Chat GPT
+          Chat
         </ion-title>
       </ion-toolbar>
     </ion-header>
@@ -16,14 +16,14 @@
         <h4>Tu chat esta vacío...</h4>
       </div>
 
-      <ion-item lines="none" [ngClass]="{'bot': m.sender !== 'me'}" class="chat-item"
+      <ion-item lines="none" class="chat-item"
         *ngFor="let m of messages; index as i">
-        <ion-badge slot="start" [color]="m.sender === 'me' ? 'warning' : 'danger'">
+        <ion-badge slot="start" [ngClass]="m.sender === 'me' ? 'me' : 'bot'">
           <ion-icon class="chat-icon"
-            [src]="m.sender === 'me' ? 'assets/user.svg' : 'assets/Dragonblanco.svg'"></ion-icon>
+            src="assets/user.svg"></ion-icon>
         </ion-badge>
-        <ion-label>
-          <p>{{m.content}}</p>
+        <ion-label text-wrap>
+          <p text-wrap>{{m.content}}</p>
           <ion-spinner *ngIf="loading && (i+1 === messages.length)" color="danger" name="dots"></ion-spinner>
         </ion-label>
       </ion-item>
@@ -35,7 +35,7 @@
           <ion-textarea formControlName="promt" auto-grow="true" placeholder="Escribe algo..."></ion-textarea>
           <ion-buttons slot="end">
             <ion-button>
-              <ion-icon style="color: blueviolet;" class="submit-icon" name="send"></ion-icon>
+              <ion-icon style="color: #8a2be2;" class="submit-icon" name="send"></ion-icon>
             </ion-button>
           </ion-buttons>
         </ion-item>
