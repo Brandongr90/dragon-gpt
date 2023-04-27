@@ -1,18 +1,18 @@
 <!-- Widget container -->
 <div class="container">
   <!-- Chat window -->
-  <div class="chatWindow">
-    <ion-header [translucent]="true">
-      <ion-toolbar>
+  <div class="chatWindow" style="border-radius: 30px">
+    <ion-header [translucent]="true" style="border-radius: 30px">
+      <ion-toolbar style="border-radius: 30px">
         <ion-title>
-          Chat Dragon
+          Chat GTP
         </ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content [scrollEvents]="true">
       <div *ngIf="!messages.length" class="empty">
-        <ion-icon src="assets/Dragon.svg"></ion-icon>
+        <ion-icon src="assets/mensaje.svg"></ion-icon>
         <h4>Tu chat esta vacío...</h4>
       </div>
 
@@ -30,12 +30,12 @@
     </ion-content>
 
     <ion-footer>
-      <form [formGroup]="form" (ngSubmit)="submit()" (keyup.enter)="submit()">
+      <form [formGroup]="form" (click)="submit()" (ngSubmit)="submit()" (keyup.enter)="submit()">
         <ion-item class="text-box-item">
           <ion-textarea formControlName="promt" auto-grow="true" placeholder="Escribe algo..."></ion-textarea>
           <ion-buttons slot="end">
             <ion-button>
-              <ion-icon class="submit-icon" color="danger" name="send"></ion-icon>
+              <ion-icon style="color: blueviolet;" class="submit-icon" name="send"></ion-icon>
             </ion-button>
           </ion-buttons>
         </ion-item>
@@ -44,5 +44,7 @@
   </div>
     
     <!-- Toggle button -->
-    <div class="chatToggle" (click)="toggleChat()"></div>
+    <div style="text-align: center;" class="chatToggle"  (click)="toggleChat()">
+      <ion-icon style="padding-top: 20px; width: 2.2em; height: 2.2em;" src="assets/mensaje2.svg"></ion-icon>
+    </div>
 </div>

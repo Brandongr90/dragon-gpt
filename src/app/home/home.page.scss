@@ -11,7 +11,8 @@ ion-content {
 }
 
 .text-box-item {
-  --border-radius: 15px;
+  padding-top: 3px;
+  --border-radius: 45px;
   --background: var(--ion-color-light)
 }
 
@@ -65,7 +66,7 @@ ion-badge {
   width: 100%;
   border: 1px solid gray;
   border-radius: 20px;
-  overflow: scroll;
+  // overflow: scroll;
 }
 @media (min-width: 600px) {
   .container {
